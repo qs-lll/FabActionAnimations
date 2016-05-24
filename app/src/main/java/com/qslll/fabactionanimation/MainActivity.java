@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle jumpBundle = new Bundle();
         jumpBundle.putString("title", "jump");
         JumpFragment jumpFragment = new JumpFragment();
-        jumpFragment.setArguments(shakeBundle);
+        jumpFragment.setArguments(jumpBundle);
 
         fragments.add(shakeFragment);
         fragments.add(jumpFragment);
