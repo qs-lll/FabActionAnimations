@@ -1,37 +1,62 @@
 package com.qslll.fabactionanimation;
 
 import android.graphics.Color;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
+import com.qslll.fabactionanimation.fragments.JumpFragment;
+import com.qslll.fabactionanimation.fragments.ShakeFragment;
 import com.qslll.library.fabs.QsJumpFab;
+import com.qslll.library.fabs.QsShakeFab;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private QsJumpFab fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fab = (QsJumpFab) findViewById(R.id.jump);
-        fab.setImageResource(R.drawable.linux);
-        fab.setBackgroundTintColor(Color.parseColor("#FFA726"));
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fab.start(-1);
-            }
-        });
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fab.stop();
-            }
-        });
-        fab.start();
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            getSupportActionBar().setElevation(0);
+        }
+        TabLayout tabLayout = new TabLayout(this);
+        if (tabLayout != null && getSupportActionBar() != null) {
+            android.support.v7.app.ActionBar.LayoutParams layoutParams = new android.support.v7.app.ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT);
+            getSupportActionBar().setCustomView(tabLayout, layoutParams);
+            getSupportActionBar().setDisplayShowCustomEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(false);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        List<Fragment> fragments = new ArrayList<>();
+
+        Bundle shakeBundle = new Bundle();
+        shakeBundle.putString("title", "shake");
+        ShakeFragment shakeFragment = new ShakeFragment();
+        shakeFragment.setArguments(shakeBundle);
+
+        Bundle jumpBundle = new Bundle();
+        jumpBundle.putString("title", "jump");
+        JumpFragment jumpFragment = new JumpFragment();
+        jumpFragment.setArguments(shakeBundle);
+
+        fragments.add(shakeFragment);
+        fragments.add(jumpFragment);
+
+        viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), fragments));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabsFromPagerAdapter(viewPager.getAdapter());
+
     }
 }
