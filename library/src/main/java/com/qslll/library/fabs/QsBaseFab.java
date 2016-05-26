@@ -68,6 +68,7 @@ public abstract class QsBaseFab extends ViewGroup {
                     animation.start();
                 }
             }
+
         });
         mAnimatorSet.start();
     }

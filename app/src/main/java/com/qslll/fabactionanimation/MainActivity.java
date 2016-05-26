@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.qslll.fabactionanimation.fragments.JumpFragment;
 import com.qslll.fabactionanimation.fragments.ShakeFragment;
+import com.qslll.fabactionanimation.fragments.SimpleBarFragment;
 import com.qslll.library.fabs.QsJumpFab;
 import com.qslll.library.fabs.QsShakeFab;
 
@@ -41,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         List<Fragment> fragments = new ArrayList<>();
 
+        Bundle barBundle = new Bundle();
+        barBundle.putString("title", "bar");
+        SimpleBarFragment barFragment = new SimpleBarFragment();
+        barFragment.setArguments(barBundle);
+
         Bundle shakeBundle = new Bundle();
         shakeBundle.putString("title", "shake");
         ShakeFragment shakeFragment = new ShakeFragment();
@@ -51,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         JumpFragment jumpFragment = new JumpFragment();
         jumpFragment.setArguments(jumpBundle);
 
+        fragments.add(barFragment);
         fragments.add(shakeFragment);
         fragments.add(jumpFragment);
 
