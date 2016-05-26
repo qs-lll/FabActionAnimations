@@ -2,9 +2,12 @@
 # FabActionAnimations
 ##material design FAB action animations
 ###Animation can bring focus to objects that need user attention.
-
+![](img/QsBarSimple.gif)
 ![](img/QsAnimation12.gif)
 
 
 ## simple to use it, like this.
+####simple factory
+![](img/simplebar.png)
+####jump Fab
 ![](img/simpleuse.png)
