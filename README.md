@@ -1,7 +1,6 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FabActionAnimations-green.svg?style=true)](https://android-arsenal.com/details/1/3632)
 # FabActionAnimations
-##material design FAB action animations
-###Animation can bring focus to objects that need user attention.
+##Animation can bring focus to objects that need user attention.
 ![](img/QsBarSimple.gif)
 ![](img/QsAnimation12.gif)
 
@@ -11,3 +10,10 @@
 ![](img/simplebar.png)
 ####jump Fab
 ![](img/simpleuse.png)
+
+#####作者简介: 是一个没有工作的穷屌丝呵呵呵,所以才有时间搞开源
+#####联系方式: 
+#####          QQ群:389329022
+#####          邮箱:qs_lll@163.com     (欢迎给我推荐工作😂)
+#####          skype:qs-lll (name:Xy)
+          
