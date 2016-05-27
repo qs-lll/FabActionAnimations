@@ -1,4 +1,5 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FabActionAnimations-green.svg?style=true)](https://android-arsenal.com/details/1/3632)
+[![Build Status](https://travis-ci.org/kyze8439690/RevealLayout.svg?branch=master)](https://travis-ci.org/qs-lll/FabActionAnimations)  
 # FabActionAnimations
 ##Animation can bring focus to objects that need user attention.
 ![](img/QsBarSimple.gif)
